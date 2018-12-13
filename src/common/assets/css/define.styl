@@ -1,0 +1,126 @@
+// 字号
+$t1         = 1.125rem;
+$t2         = 0.938rem;
+$t3         = 0.875rem;
+$t4         = 0.75rem;
+$t5         = 0.688rem;
+
+// 背景颜色
+$bg_color   = #f2f2f2;
+
+// 文字色
+$text_dark  = #333;
+$text       = #666;
+$text_light = #999;
+
+// 标准色
+$green      = #00994f;
+$orange     = #f56449;
+$white      = #ffffff;
+
+
+// 线条色
+$line       = #bfbfbf;
+$line_light = #ddd;
+$line_lighter= #e1e1e1;
+
+$line_green = #5cbe7e;
+
+$transition_time = 0.3s;
+
+/**
+ * 容器标准边距
+ * 栗子: margin: 0 $edge; | padding: 0 $edge; | margin-bottom: $edge;
+ */
+$edge       = 0.625rem;
+
+/**
+ * 标准圆角方法
+ * 后续会支持通过传参设置具体某个方向的圆角
+ */
+$round() {
+    border-radius: 0.25rem;
+}
+
+// 清除浮动
+$clear(){
+	&:after{
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+
+// fixed布局
+$fixed(){
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+}
+
+// 遮罩
+$mask(){
+	background: rgba(0, 0, 0, 0.15);
+}
+
+// 表格模式
+$table(){
+	display: table;
+	>*{
+		display: table-cell;
+		vertical-align: middle;
+		>*{
+			margin: auto;
+		}
+	}
+}
+
+// 文本溢出
+$textwrap() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// 背景色白->暗
+$tWhite() {
+  transform: $transition_time background;
+  &:active{
+    background: #dedede;
+  }
+}
+
+// 背景色绿->深绿
+$tGreen() {
+  transform: $transition_time background;
+  &:active{
+    background: #006835;
+  }
+}
+
+$tBlack() {
+  transform: $transition_time background;
+  &:active{
+    background: rgba(0,0,0,0.08);
+  }
+}
+
+// 整体变暗过渡效果
+$tOpacity() {
+  transform: $transition_time opacity;
+  &:active{
+    opacity: 0.5;
+  }
+}
+
+// 文字变暗过渡效果
+$tFont(rgba = 'rgba(255,255,255,0.5)') {
+  transform: $transition_time all;
+  &:active{
+    color: rgba(255,255,255,0.5);
+  }
+}

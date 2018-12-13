@@ -1,0 +1,179 @@
+/**
+ * 网格系统
+ */
+// 容器
+.g-container{
+	width: 100%;
+	overflow: hidden;
+}
+// 行
+.g-row{
+	$clear();
+}
+// 列-无宽度
+.g-col{
+	float: left;
+}
+// 列-12列栅格&偏移
+for num in 1..12{
+	.g-col-{num}{
+		float: left;
+		width: (100/12*num) + '%';
+		word-wrap: break-word;
+	}
+
+	.g-col-offset-{num}{
+		margin-left: (100/12*num) + '%';
+	}
+}
+// 网格间距
+$gutter = 0.25rem;
+.g-gutter{
+	margin: 0 (- $gutter);
+	>*{
+		padding: 0 $gutter;
+	}
+}
+
+
+
+//通用
+.g-noDate{
+	text-align: -webkit-center;
+	line-height: 30;
+}
+//固定表格头部
+.g-table-head{
+	padding-top: 0.5rem;
+	border-bottom: 1px solid #e6e6e6;
+	ul{
+		width: 100%;
+		height: 3rem;
+		line-height: 3rem;
+		display: -webkit-inline-box;
+		background: #FFF;
+
+		li{
+			width: 25%;
+			color: #000;
+			padding: 0 0.5rem;
+			font-size: 0.875rem;
+			font-weight: 500;
+			text-align: center;
+		}
+		li:nth-child(1){
+			text-align: left;
+		}
+		li:nth-child(4){
+			text-align: right;
+		}
+	}
+}
+//错误
+.g-list-nodata {
+	padding: 8rem 0;
+	text-align: center;
+	>span.vc-icon {
+		width: 5rem;
+		height: 5rem;
+	}
+	p{
+		padding-top: .8rem;
+		font-size: $t_3;
+		span{
+			display: block;
+			line-height: 180%;
+		}
+		ins {
+			font-size: $t_2;
+			display: inline-block;
+			color: $c_text_des;
+		}
+	}
+}
+
+
+
+/**
+ * 输入框
+ */
+// 基类
+.g-input{
+	height: 2.25rem;
+	line-height: 2.25rem;
+	padding: 0 0.25rem;
+	border: none;
+	font-size: $t3;
+	color: $text_dark;
+}
+
+.g-border-input{
+	border: 1px solid $line;
+}
+// 输入框-全尺寸
+.g-input-full{
+	width: 100%;
+}
+
+
+
+/**
+ * 按钮
+ */
+// 按钮基类
+.g-btn{
+  border: none;
+	font-size: $t3;
+	text-align: center;
+	height: 2.25rem;
+	line-height: 2.25rem;
+	padding: 0 5px;
+	color: #fff;
+	background: $text_light;
+
+}
+// 圆角
+.g-btn-round{
+	$round();
+}
+// 按钮-默认
+.g-btn-default{
+	padding: 0 2rem;
+}
+// 按钮-全尺寸
+.g-btn-wide{
+	width: 100%;
+}
+// 按钮-绿色
+.g-btn-green{
+	color: #fff;
+	background: $green;
+  $tGreen();
+}
+.g-btn-green-text{
+	color: $green;
+	background: #fff;
+}
+// 按钮-红色
+.g-btn-orange{
+	color: #fff;
+	background: $orange;
+}
+//按钮-白色
+.g-btn-white{
+	color: $green;
+	background: #fff;
+}
+
+	// 修改有赞的样式
+.van-nav-bar .van-icon{
+	color: #fff !important;
+}
+.van-nav-bar{
+	background-color:#ff0000 !important;
+	color: #fff !important;
+}
+.g-content{
+	margin-top: 80px !important;
+}
+

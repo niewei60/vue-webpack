@@ -1,0 +1,21 @@
+<html lang="en" dir="ltr">
+<head>
+    <title>历史记录</title>
+</head>
+<div class="p-details">
+    <ul>
+        <li>提取时间</li>
+        <li>提现金额</li>
+        <li>账号剩余</li>
+        <li>序号</li>
+    </ul>
+    <div class="p-data" v-if="listArr.length >0">
+        <ul v-for="(item,index) in listArr">
+            <li>{{item.createTime}}</li>
+            <li>{{item.withdrawCoin}}</li>
+            <li>{{item.leftCoin}}</li>
+            <li>{{++index}}</li>
+        </ul>
+    </div>
+</div>
+</html>
